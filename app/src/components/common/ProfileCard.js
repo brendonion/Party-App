@@ -1,13 +1,22 @@
 import React, { Component } from 'react';
-import { ME_1 } from '@/constants/assets';
+import Draggable from 'react-draggable';
 
 class ProfileCard extends Component {
+
   render() {
+    const { image, onDrag, onStop, position } = this.props;
+
     return (
-      <div className="profile-card">
-        <img className="profile-card__img" src={ME_1} />
-        <p className="profile-card__info">Name, Age</p>
-      </div>
+      <Draggable
+        onDrag={onDrag}
+        onStop={onStop}
+        position={position}
+      >
+        <div className="profile-card">
+          <img className="profile-card__img" src={image} />
+          <p className="profile-card__info">Name, Age</p>
+        </div>
+      </Draggable>
     );
   }
 }

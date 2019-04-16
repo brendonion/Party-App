@@ -8,24 +8,24 @@ import GameOver from './GameOver';
 class Game extends Component {
 
   state = {
-    step: 0,
+    stage: 1,
   }
 
-  componentDidMount() {
-    setTimeout(() => this.setState({step: this.state.step + 1}), 3000);
-  }
+  // componentDidMount() {
+  //   setTimeout(() => this.setState({step: this.state.stage + 1}), 3000);
+  // }
 
   render() {
-    const { step } = this.state;
+    const { stage } = this.state;
 
     return (
       <main className="game">
-        {step ? <Header /> : null}
+        {stage ? <Header /> : null}
         {{
           0: <GameIntro />,
           1: <GameLoop />,
           2: <GameOver />,
-        }[step]}
+        }[stage]}
       </main>
     );
   }
