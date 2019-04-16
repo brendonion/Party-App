@@ -4,13 +4,14 @@ import Draggable from 'react-draggable';
 class ProfileCard extends Component {
 
   render() {
-    const { image, onDrag, onStop, position } = this.props;
+    const { image, onDrag, onStop, position, disabled } = this.props;
 
     return (
       <Draggable
         onDrag={onDrag}
         onStop={onStop}
         position={position}
+        disabled={disabled}
       >
         <div className="profile-card">
           <img className="profile-card__img" src={image} />

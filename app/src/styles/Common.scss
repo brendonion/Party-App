@@ -35,6 +35,33 @@
   }
 }
 
+// YES OR NO
+.yes-or-no {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 25px;
+
+  button {
+    position: relative;
+    height: 100px;
+    width: 100px;
+    padding: 20px;
+    background: white;
+    border-radius: 50%;
+    border: 8px solid whitesmoke;
+
+    &:first-child {
+      margin-right: -5px;
+    }
+
+    img {
+      height: 100%;
+      width: 100%;
+    }
+  }
+}
+
 // IT'S A MATCH
 .match {
   position: fixed;
@@ -74,6 +101,7 @@
       width: 100px;
       border-radius: 50%;
       border: 3px solid white;
+      object-fit: cover;
 
       &:first-child {
         margin-right: 10px;
@@ -105,29 +133,44 @@
   }
 }
 
-// YES OR NO
-.yes-or-no {
+// ARE YOU SURE
+.are-you-sure {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 25px;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  padding: 10px;
+  background: rgba(0, 0, 0, 0.90);
+  z-index: 1000;
+  animation: fade linear 0.5s;
 
-  button {
-    position: relative;
-    height: 100px;
-    width: 100px;
-    padding: 20px;
+  &__modal {
     background: white;
-    border-radius: 50%;
-    border: 8px solid whitesmoke;
+    text-align: center;
+    border-radius: 6px;
+    padding: 15px;
 
-    &:first-child {
-      margin-right: -5px;
+    h1 {
+      font-size: 30px;
+      margin-bottom: 10px;
     }
 
-    img {
-      height: 100%;
-      width: 100%;
+    button {
+      padding: 10px 20px;
+      font-size: 18px;
+      border: 2px solid black;
+      border-radius: 4px;
+      background: white;
+
+      &:first-of-type {
+        margin-right: 10px;
+      }
     }
   }
 }

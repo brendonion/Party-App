@@ -1,14 +1,13 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 
 import Header from './common/Header';
 import GameIntro from './GameIntro';
 import GameLoop from './GameLoop';
-import GameOver from './GameOver';
 
 class Game extends Component {
 
   state = {
-    stage: 1,
+    gameStarted: true,
   }
 
   // componentDidMount() {
@@ -16,16 +15,17 @@ class Game extends Component {
   // }
 
   render() {
-    const { stage } = this.state;
+    const { gameStarted } = this.state;
 
     return (
       <main className="game">
-        {stage ? <Header /> : null}
-        {{
-          0: <GameIntro />,
-          1: <GameLoop />,
-          2: <GameOver />,
-        }[stage]}
+        {!gameStarted && <GameIntro />}
+        {gameStarted && 
+          <Fragment>
+            <Header />
+            <GameLoop />
+          </Fragment>
+        }
       </main>
     );
   }
