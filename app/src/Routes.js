@@ -2,17 +2,15 @@ import React from 'react';
 import { Route, Switch } from 'react-router';
 import * as routes from './constants/routes';
 
-import Home from './components/Home';
+import Game from './components/Game';
 
 const Routes = (props) => {
   return (
-    <div>
-      <Switch>
-        <Route exact path={routes.HOME} component={Home} />
-        <Route render={(props) => <div>404 - Not Found</div>} />
-      </Switch>
-    </div>
-  )
+    <Switch>
+      <Route exact path={routes.HOME} component={Game} />
+      <Route render={(props) => <div>Page Not Found</div>} />
+    </Switch>
+  );
 }
 
 export default Routes

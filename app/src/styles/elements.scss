@@ -1,0 +1,20 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+html {
+  background: black;
+}
+
+main {
+  display: flex;
+  justify-self: center;
+  flex-direction: column;
+  max-width: 500px;
+  margin: 0 auto;
+  border-left: 1px solid;
+  border-right: 1px solid;
+  background: white;
+}
