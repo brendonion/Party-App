@@ -31,7 +31,6 @@ class GameLoop extends Component {
   }
 
   handleYes = () => {
-    // TODO: Set "random" image
     this.setState({ 
       isMatched: true,
       prevImage: this.state.currentImage,
@@ -91,8 +90,7 @@ class GameLoop extends Component {
     
     const delay = (duration) => new Promise((resolve) => setTimeout(resolve, duration));
     const profileCard = document.getElementsByClassName('profile-card')[0];
-    const { x } = this.state.deltaPosition;
-    let newX = x;
+    let newX = this.state.deltaPosition.x;
 
     await delay(500);
 
