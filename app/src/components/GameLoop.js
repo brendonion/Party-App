@@ -3,6 +3,7 @@ import { ME_1, ME_2, ME_3 } from '@/constants/assets';
 
 import ProfileCard from './common/ProfileCard';
 import ItsAMatch from './common/ItsAMatch';
+import YesOrNo from './common/YesOrNo';
 
 class GameLoop extends Component {
 
@@ -12,8 +13,21 @@ class GameLoop extends Component {
     isMatched: false,
     deltaPosition: {
       x: 0, 
-      y: 0
+      y: 0,
     },
+  }
+
+  handleYes = () => {
+    // TODO: Set "random" image
+    this.setState({ 
+      isMatched: true,
+      prevImage: this.state.currentImage,
+      currentImage: ME_2,
+      deltaPosition: {
+        x: 0,
+        y: 0,
+      },
+    });
   }
 
   handleMatchClose = () => this.setState({ isMatched: false });
@@ -77,6 +91,9 @@ class GameLoop extends Component {
             onClose={this.handleMatchClose}
           />
         }
+        <YesOrNo 
+          onYes={this.handleYes}
+        />
       </div>
     );
   }

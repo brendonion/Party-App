@@ -14,7 +14,7 @@ class ProfileCard extends Component {
       >
         <div className="profile-card">
           <img className="profile-card__img" src={image} />
-          <p className="profile-card__info">Name, Age</p>
+          <p className="profile-card__info">Brendan, 21</p>
         </div>
       </Draggable>
     );
