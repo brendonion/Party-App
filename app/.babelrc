@@ -1,0 +1,25 @@
+{
+  "presets": [
+    ["@babel/preset-env", { "loose": false, "modules": "umd" }],
+    "@babel/preset-react"
+  ],
+  "plugins": [
+    ["@babel/plugin-transform-runtime", { "regenerator": true }],
+    ["@babel/plugin-proposal-class-properties", { "loose": true }],
+    "@babel/plugin-proposal-optional-chaining",
+    "@babel/plugin-syntax-dynamic-import"
+  ],
+  "env": {
+    "test": {
+      "presets": [
+        ["@babel/preset-env", { "loose": false, "modules": "umd" }],
+        "@babel/preset-react"
+      ],
+      "plugins": [
+        "@babel/plugin-syntax-dynamic-import",
+        "@babel/plugin-proposal-class-properties",
+        "dynamic-import-node"
+      ]
+    }
+  }
+}

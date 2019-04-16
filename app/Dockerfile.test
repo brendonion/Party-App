@@ -1,0 +1,17 @@
+FROM freshworksstudio/chrome-node
+
+MAINTAINER FreshWorks <web@freshworks.io>
+
+ENV PATH $PATH:/app/node_modules/.bin
+
+RUN mkdir /app
+
+WORKDIR /app
+
+COPY ./package.json .
+
+RUN npm install
+
+COPY . .
+
+CMD [ "npm", "run", "ci-test" ]

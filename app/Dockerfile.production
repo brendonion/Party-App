@@ -1,0 +1,23 @@
+FROM node:9.6.1
+
+MAINTAINER FreshWorks <web@freshworks.io>
+
+ENV PATH $PATH:/app/node_modules/.bin
+
+RUN mkdir /app
+
+WORKDIR /app
+
+COPY ./package.json .
+
+RUN npm install --no-optional
+
+COPY . .
+
+RUN npm run build
+
+RUN npm prune --production
+
+EXPOSE 3000
+
+CMD [ "npm", "run", "serve" ]

@@ -1,0 +1,15 @@
+FROM node:9.6.1
+
+MAINTAINER FreshWorks <web@freshworks.io>
+
+RUN npm install -g snyk snyk-to-html
+
+RUN mkdir /app
+
+WORKDIR /app
+
+COPY ./package.json .
+
+RUN npm install --production --no-optional
+
+CMD snyk test --json > audit-report.json; cat audit-report.json | snyk-to-html -o audit-report.html
