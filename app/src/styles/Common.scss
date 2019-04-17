@@ -2,7 +2,12 @@
 .header {
   display: flex;
   justify-content: center;
-  padding: 10px 20px;
+  border-bottom: 2px solid whitesmoke;
+
+  &__logo {
+    height: 50px;
+    width: 50px;
+  }
 }
 
 // PROFILE CARD
@@ -24,7 +29,7 @@
     height: 80%;
     border-radius: 6px 6px 0 0;
     object-fit: cover;
-    object-position: top;
+    object-position: center;
     pointer-events: none;
   }
 
