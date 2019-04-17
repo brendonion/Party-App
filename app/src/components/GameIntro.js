@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
+import { TITLE } from '@/constants/assets';
 
 class GameIntro extends Component {
   render() {
     return (
       <div className="game__intro">
-        <h1>[INSERT APP NAME HERE]</h1>
+        <img src={TITLE} />
       </div>
     );
   }

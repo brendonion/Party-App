@@ -5,3 +5,6 @@ export { default as YOU } from '@/assets/images/You.jpg';
 
 export { default as GREEN_HEART } from '@/assets/images/Green_Heart.png';
 export { default as RED_X } from '@/assets/images/Red_X.png';
+
+export { default as LOGO } from '@/assets/images/Logo.png';
+export { default as TITLE } from '@/assets/images/Title.png';

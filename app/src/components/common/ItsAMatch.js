@@ -4,11 +4,11 @@ import { YOU } from '@/constants/assets';
 class ItsAMatch extends Component {
   render() {
     const { image, onClose } = this.props;
-    
+
     return (
       <div className="match">
         <div className="match__prompt">
-          <h1>Its A Match!</h1>
+          <h1>It's A Match!</h1>
           <p>You and Brendan have liked each other.</p>
         </div>
         <div className="match__images">

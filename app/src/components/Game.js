@@ -7,19 +7,21 @@ import GameLoop from './GameLoop';
 class Game extends Component {
 
   state = {
-    gameStarted: true,
+    gameStarted: false,
   }
 
-  // componentDidMount() {
-  //   setTimeout(() => this.setState({step: this.state.stage + 1}), 3000);
-  // }
+  componentDidMount() {
+    setTimeout(() => this.setState({ gameStarted: true }), 3000);
+  }
 
   render() {
     const { gameStarted } = this.state;
 
     return (
       <main className="game">
-        {!gameStarted && <GameIntro />}
+        {!gameStarted && 
+          <GameIntro />
+        }
         {gameStarted && 
           <Fragment>
             <Header />

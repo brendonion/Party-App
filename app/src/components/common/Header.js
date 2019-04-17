@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
+import { LOGO } from '@/constants/assets';
 
 class Header extends Component {
   render() {
     return (
       <header className="header">
-        <p>Insert Logo Here</p>
+        <img className="header__logo" src={LOGO} />
       </header>
     );
   }
