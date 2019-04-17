@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { ME_1, ME_2, ME_3 } from '@/constants/assets';
+import { ME_1, ME_2, ME_3, ME_4, ME_5, ME_6, ME_7, ME_8, ME_9, ME_10 } from '@/constants/assets';
 
 import ProfileCard from './common/ProfileCard';
 import ItsAMatch from './common/ItsAMatch';
@@ -9,8 +9,8 @@ import AreYouSure from './common/AreYouSure';
 class GameLoop extends Component {
 
   state = {
-    prevImage: ME_1,
-    currentImage: ME_1,
+    prevImage: null,
+    currentImage: null,
     isMatched: false,
     isRejected: false,
     isDraggable: true,
@@ -20,8 +20,16 @@ class GameLoop extends Component {
     },
   }
 
+  componentWillMount() {
+    const firstImage = this.pickRandomImage();
+    this.setState({
+      prevImage: firstImage,
+      currentImage: firstImage,
+    });
+  }
+
   pickRandomImage() {
-    const images = [ME_1, ME_2, ME_3];
+    const images = [ME_1, ME_2, ME_3, ME_4, ME_5, ME_6, ME_7, ME_8, ME_9, ME_10];
     const random = images[Math.floor(Math.random() * images.length)];
     if (random !== this.state.currentImage) {
       return random;
