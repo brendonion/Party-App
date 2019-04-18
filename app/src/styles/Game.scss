@@ -15,6 +15,12 @@
     margin: auto 0;
     animation: fadein linear 1s;
     text-align: center;
+
+    p {
+      font-family: 'Times New Roman', Times, serif;
+      font-style: italic;
+      color: #2170a7;
+    }
   }
 
   &__loop {

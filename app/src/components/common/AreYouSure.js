@@ -1,15 +1,19 @@
 import React, { Component } from 'react';
 
 class AreYouSure extends Component {
-  render() {
-    const { onYes, onNo } = this.props;
 
+  handleYes = () => {
+    const { xCoords, onYes } = this.props;
+    xCoords ? onYes() : onYes(true);
+  }
+
+  render() {
     return (
       <div className="are-you-sure">
         <div className="are-you-sure__modal">
           <h1>Wait... are you sure?</h1>
-          <button onClick={onYes}>Yes</button>
-          <button onClick={onNo}>No</button>
+          <button onClick={this.handleYes}>Yes</button>
+          <button onClick={this.props.onNo}>No</button>
         </div>
       </div>
     );
