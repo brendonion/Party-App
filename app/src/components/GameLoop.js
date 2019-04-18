@@ -88,7 +88,7 @@ class GameLoop extends Component {
     });
   }
 
-  handleRejection = async () => {
+  handleRejection = async (resetX = false) => {
     this.handleReset(false);
     this.toggleDisable();
     
@@ -97,7 +97,7 @@ class GameLoop extends Component {
     
     this.setState({
       deltaPosition: {
-        x: -profileCard.clientWidth * 1.5,
+        x: !resetX ? -profileCard.clientWidth * 1.5 : 0,
         y: 0,
       }
     });
@@ -151,6 +151,7 @@ class GameLoop extends Component {
           <AreYouSure
             onYes={this.handleRejection}
             onNo={this.handleReset}
+            xCoords={deltaPosition.x}
           />
         }
       </div>

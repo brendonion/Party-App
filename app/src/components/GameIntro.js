@@ -6,6 +6,7 @@ class GameIntro extends Component {
     return (
       <div className="game__intro">
         <img src={TITLE} />
+        <p>The perfect way to break the ice ™️</p>
       </div>
     );
   }
