@@ -122,7 +122,7 @@
     flex-direction: column;
     margin: 75px 0 0 0;
 
-    a, button {
+    button {
       width: 100%;
       max-width: 300px;
       border: 2px solid gray;
@@ -160,24 +160,21 @@
       position: absolute;
       bottom: 20px;
       left: 20px;
+      width: 100%;
+      margin: 10px 0;
+      font-size: 14px;
       color: rgba(0, 0, 0, 0.3);
     }
 
     img {
       height: 75px;
       width: 75px;
-      margin-bottom: 5px;
+      margin-bottom: 10px;
       animation: enlarge linear 0.33s;
     }
 
     h2 {
       text-align: center;
-    }
-
-    p {
-      margin: 10px 0;
-      font-size: 14px;
-      width: 100%;
     }
 
     input {
@@ -222,6 +219,13 @@
     text-align: center;
     border-radius: 6px;
     padding: 15px;
+
+    img {
+      height: 75px;
+      width: 75px;
+      margin-bottom: 10px;
+      animation: enlarge linear 0.33s;
+    }
 
     h1 {
       font-size: 30px;

@@ -13,8 +13,9 @@ export { default as YOU } from '@/assets/images/You.jpg';
 
 export { default as GREEN_HEART } from '@/assets/images/Green-Heart.png';
 export { default as RED_X } from '@/assets/images/Red-X.png';
-export { default as ALERT } from '@/assets/images/Alert.png';
+export { default as HEART } from '@/assets/images/Heart.png';
 export { default as VERIFIED } from '@/assets/images/Verified.png';
+export { default as ALERT } from '@/assets/images/Alert.png';
 
 export { default as LOGO } from '@/assets/images/Logo.png';
 export { default as TITLE } from '@/assets/images/Title.png';
