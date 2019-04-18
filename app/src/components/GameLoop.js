@@ -76,34 +76,37 @@ class GameLoop extends Component {
     }
   }
 
-  handleReset = (reset = true) => {
+  handleReset = (resetCoords = true) => {
     const { x, y } = this.state.deltaPosition;
     this.setState({ 
       isMatched: false, 
       isUnsure: false,
       deltaPosition: {
-        x: reset ? 0 : x,
-        y: reset ? 0 : y,
+        x: resetCoords ? 0 : x,
+        y: resetCoords ? 0 : y,
       },
     });
   }
 
-  handleDisable = () => {
-    this.setState({ isDraggable: !this.state.isDraggable });
-  }
-
   handleRejection = async () => {
     this.handleReset(false);
-    this.handleDisable();
+    this.toggleDisable();
     
     const delay = (duration) => new Promise((resolve) => setTimeout(resolve, duration));
     const profileCard = document.getElementsByClassName('profile-card')[0];
-    let newX = this.state.deltaPosition.x;
-
+    
+    this.setState({
+      deltaPosition: {
+        x: -profileCard.clientWidth * 1.5,
+        y: 0,
+      }
+    });
+    
     await delay(500);
-
+    
+    let newX = this.state.deltaPosition.x;
     while (newX <= profileCard.clientWidth * 1.5) {
-      newX = newX + 5;
+      newX += 5;
       await delay(10);
       this.setState({ 
         deltaPosition: {
@@ -114,7 +117,11 @@ class GameLoop extends Component {
     }
 
     this.handleYes();
-    this.handleDisable();
+    this.toggleDisable();
+  }
+
+  toggleDisable = () => {
+    this.setState({ isDraggable: !this.state.isDraggable });
   }
 
   render() {
@@ -132,6 +139,7 @@ class GameLoop extends Component {
         <YesOrNo 
           onYes={this.handleYes}
           onNo={this.handleNo}
+          disabled={!isDraggable}
         />
         {isMatched &&
           <ItsAMatch 
