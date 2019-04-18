@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react';
-import { YOU, ALERT, VERIFIED } from '@/constants/assets';
+import { YOU, HEART, VERIFIED } from '@/constants/assets';
 import { EMAIL_TOKEN, TO_EMAIL, FROM_EMAIL } from '@/constants/keys';
 
 class ItsAMatch extends Component {
@@ -50,7 +50,7 @@ class ItsAMatch extends Component {
               <img src={YOU} />
             </div>
             <div className="match__options">
-              <button onClick={this.handleSendMessage}>Send a Message</button>
+              <button onClick={this.handleSendMessage}>Give Brendan Your Number</button>
               <button onClick={onClose}>Keep Playing</button>
             </div>
           </Fragment>
@@ -60,17 +60,15 @@ class ItsAMatch extends Component {
             <form onSubmit={this.handleSubmit} className="match__form__modal">
               {!isEmailSent &&
                 <Fragment>
-                  <img key={1} src={ALERT} />
-                  <h2>Your account needs to be verified</h2>
-                  <p>Enter your name and phone number:</p>
+                  <img key={1} src={HEART} />
                   <input required placeholder="Name" onChange={this.handleChange('name')} />
-                  <input required type="tel" placeholder="Phone number" onChange={this.handleChange('phone')} />
-                  <button>Submit</button>
+                  <input required type="tel" placeholder="Phone Number" onChange={this.handleChange('phone')} />
+                  <button>Send</button>
                 </Fragment>
               }
               {isEmailSent &&
                 <Fragment>
-                  <img key={2} src={VERIFIED} />
+                  <img src={VERIFIED} />
                   <h2>Thanks! 😉</h2>
                   <p className="match__form__hidden-text">Name: {name}, Phone: {phone}</p>
                 </Fragment>
