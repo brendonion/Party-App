@@ -67,9 +67,9 @@ class GameLoop extends Component {
   handleStop = () => {
     const profileCard = document.getElementsByClassName('profile-card')[0];
     const { x } = this.state.deltaPosition;
-    if (x >= (profileCard.clientWidth / 1.5)) {
+    if (x >= (profileCard.clientWidth / 2)) {
       this.handleYes();
-    } else if (x <= -(profileCard.clientWidth / 1.5)) {
+    } else if (x <= -(profileCard.clientWidth / 2)) {
       this.handleNo();
     } else {
       this.handleReset();
